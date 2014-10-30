@@ -36,8 +36,8 @@ makeGoogleChart = (chartType, extraOptions) -> (pivotData, opts) ->
 	title += " #{opts.localeStrings.by} #{groupByTitle}" if groupByTitle != ""
 
 	options = 
-		width: $(window).width() / 1.4
-		height: $(window).height() / 1.4
+		#width: $(window).width() / 1.4
+		#height: $(window).height() / 1.4
 		title: title
 		hAxis: {title: hAxisTitle, slantedText: numCharsInHAxis > 50}
 		vAxis: {title: vAxisTitle}
@@ -49,9 +49,10 @@ makeGoogleChart = (chartType, extraOptions) -> (pivotData, opts) ->
 
 	dataTable = google.visualization.arrayToDataTable(dataArray)
 
-	result = $("<div style='width: 100%; height: 100%;'>")
+	result = $("<div style='width: 95%; height: 95%;'>")
 	wrapper = new google.visualization.ChartWrapper {dataTable, chartType, options}
-	wrapper.draw(result[0])	
+	setTimeout ( -> wrapper.draw(result[0]) ), 100
+
 	result.bind "dblclick", -> 
 		editor = new google.visualization.ChartEditor()
 		google.visualization.events.addListener editor, 'ok', -> 

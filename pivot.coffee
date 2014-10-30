@@ -539,7 +539,7 @@ $.fn.pivotUI = (input, inputOpts, overwrite = false, locale="en") ->
                 axisValues[k][v]++
 
         #start building the output
-        uiTable = $("<table cellpadding='5'>")
+        uiTable = $("<table cellpadding='5' style='width: 100%; height: 100%;'>")
 
         #renderer control
         rendererControl = $("<td>")
@@ -656,7 +656,8 @@ $.fn.pivotUI = (input, inputOpts, overwrite = false, locale="en") ->
         tr2.append $("<td valign='top' class='pvtAxisContainer pvtRows'>")
 
         #the actual pivot table container
-        pivotTable = $("<td valign='top' class='pvtRendererArea'>").appendTo(tr2)
+        td2 = $("<td valign='top' class='pvtRendererArea'>").appendTo(tr2)
+        pivotTable = $("<div class='pvtRendererAreaDiv'>").appendTo(td2)
 
         #finally the renderer dropdown and unused attribs are inserted at the requested location
         if opts.unusedAttrsVertical == true or unusedAttrsVerticalAutoOverride

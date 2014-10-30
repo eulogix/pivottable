@@ -88,3 +88,14 @@ table.pvtTable tr td {
     max-height: 200px;
 }
 .pvtCheckContainer p{ margin: 5px; }
+
+.pvtRendererArea {
+    width:100%;
+    height:100%;
+}
+
+.pvtRendererAreaDiv {
+    width:100%;
+    height:100%;
+    overflow: auto;
+}
