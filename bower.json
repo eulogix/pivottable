@@ -20,7 +20,7 @@
   "homepage": "http://nicolas.kruchten.com/pivottable",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nicolaskruchten/pivottable.git"
+    "url": "git@github.com:pragma-p/pivottable.git"
   },
   "dependencies": {
     "jquery": "*",
